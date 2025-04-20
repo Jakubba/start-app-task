@@ -1,0 +1,68 @@
+@use '../../styles/base/variables.scss' as *;
+@use '../../styles/base/mixin.scss' as *;
+@use '../../styles/ui/button.scss' as *;
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
+
+  &__title {
+    color: $deep-blue;
+    font-size: 2.625rem;
+    line-height: 3.25rem;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+    text-align: center;
+    text-wrap: auto;
+    max-width: 38.75rem;
+    margin-top: 1.5rem;
+  }
+  &__subtitle {
+    color: $color-gray;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    text-align: center;
+    margin-bottom: 2.8125rem;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:nth-child(2) {
+      .plan {
+        background-color: $primary-color;
+        .plan__title,
+        .plan__price,
+        .plan__trial,
+        .plan__cancel,
+        .plan__description {
+          color: $color-white;
+        }
+      }
+      .plan__description {
+        max-width: 237px;
+      }
+      .plan__btn {
+        background-color: $color-turkus;
+        border: 1px solid $color-turkus;
+        color: $color-white;
+        &:hover {
+          background-color: $color-white;
+          color: $color-turkus;
+        }
+      }
+    }
+  }
+}

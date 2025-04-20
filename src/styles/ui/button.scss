@@ -1,0 +1,102 @@
+@use '../base/variables' as *;
+.btn {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  border: none;
+  border-radius: $border-radius-lg;
+  padding: 12px 32px;
+  color: $color-white;
+  border: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  span {
+    position: relative;
+    z-index: 20;
+    transform: color 0.3s ease-in-out;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius-lg;
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+    z-index: 10;
+  }
+  &:hover {
+    &::before {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  &-small {
+    width: max-content;
+    padding: 7px 21px;
+  }
+  &-middle {
+    width: max-content;
+    padding: 12px 32px;
+  }
+  &-large {
+    min-width: 100%;
+  }
+  &-primary {
+    &::before {
+      background-color: $btn-primary;
+    }
+    &:hover {
+      border: 2px solid $btn-primary;
+      &::before {
+        transform: translate3d(0, -100%, 0);
+      }
+      span {
+        color: $btn-primary;
+      }
+    }
+  }
+  &-secondary {
+    &::before {
+      background-color: $btn-secondary;
+    }
+    &:hover {
+      border: 2px solid $btn-secondary;
+      &::before {
+        transform: translate3d(0, -100%, 0);
+      }
+      span {
+        color: $btn-secondary;
+      }
+    }
+  }
+  &-third {
+    &::before {
+      background-color: $btn-tertiary;
+    }
+    &:hover {
+      border: 2px solid $btn-tertiary;
+      &::before {
+        transform: translate3d(0, -100%, 0);
+      }
+      span {
+        color: $btn-tertiary;
+      }
+    }
+  }
+}
+.link {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  color: $color-turkus;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: $btn-primary;
+  }
+}

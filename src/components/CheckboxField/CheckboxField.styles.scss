@@ -1,0 +1,137 @@
+@use '../../styles/base/variables.scss' as *;
+@use '../../styles/base/mixin.scss' as *;
+.auth-form {
+  &__label {
+    font-size: 1rem;
+    color: $color-gray;
+  }
+  &__field {
+    position: relative;
+    &--checkbox {
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 27.6px;
+      .auth-form__checkbox {
+        display: none;
+        transition: all 0.3s ease-in-out;
+        &:checked + .auth-form__label {
+          &::before {
+            background-color: $checked-bg-color;
+            border-color: $checked-bg-color;
+          }
+          &::after {
+            content: '';
+            width: 12px;
+            height: 9px;
+            background: url('./../../assets/icons/icon-check-black.svg') no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+
+      .auth-form__label {
+        position: relative;
+        padding-left: 37px;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 26px;
+        color: $color-gray;
+        transition: all 0.3s ease-in-out;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: -2px;
+          width: $checkbox-size;
+          height: $checkbox-size;
+          border: 2px solid $border-color;
+          border-radius: $border-radius-md;
+          background-color: transparent;
+          transition:
+            background-color 0.3s,
+            border-color 0.3s;
+        }
+
+        &::after {
+          position: absolute;
+          display: block;
+          left: 6.7px;
+          top: 5.5px;
+          transition: content 0.3s;
+        }
+      }
+      .auth-form__error {
+        position: absolute;
+        bottom: -18px;
+      }
+    }
+    &--error {
+      .auth-form__input,
+      .auth-form__checkbox {
+        border-color: $error;
+      }
+      .auth-form__label {
+        color: $error;
+        &::before {
+          border-color: $error;
+        }
+      }
+    }
+  }
+  &__error {
+    color: $error;
+    font-size: 0.625rem;
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__or {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    max-width: 320px;
+    &--text {
+      position: relative;
+      font-size: 16px;
+      line-height: 26px;
+      color: $color-gray;
+      padding: 27.6px 13px 16.6px 13px;
+      background-color: $color-white;
+      width: max-content;
+      z-index: 20;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      height: 2px;
+      width: 100%;
+      border-radius: $border-radius-sm;
+      background-color: $color-light-gray;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  &__footer-text {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    color: $color-gray;
+  }
+}

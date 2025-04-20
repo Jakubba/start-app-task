@@ -1,0 +1,73 @@
+@use '../../styles/base/variables.scss' as *;
+@use '../../styles/base/mixin.scss' as *;
+.hero {
+  padding: 120px 16px 30px 16px;
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  @include desktop {
+    padding: 195px 80px 60px 80px;
+    gap: 79px;
+  }
+  @include max-small {
+    padding: 120px 0px 30px 0px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 976px;
+    @include desktop {
+      gap: 60px;
+      flex-direction: row;
+    }
+  }
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    @include max-small {
+      padding-inline: 16px;
+    }
+    @include desktop {
+      max-width: 424px;
+      align-items: start;
+    }
+    @include max-tablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-wrap: auto;
+    color: $color-white;
+    margin-bottom: 24px;
+    text-align: center;
+    @include desktop {
+      text-align: start;
+    }
+  }
+
+  &__description {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 500;
+    color: $color-white;
+    margin-bottom: 45px;
+    text-align: center;
+    @include desktop {
+      text-align: start;
+      max-width: 363px;
+    }
+  }
+}

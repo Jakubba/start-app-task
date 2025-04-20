@@ -1,0 +1,130 @@
+@use '../../styles/base/variables.scss' as *;
+@use '../../styles/base/mixin.scss' as *;
+@use '../../styles/ui/button.scss' as *;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px 16px;
+  background-color: $primary-color;
+  @include desktop {
+    padding: 65px 40px 30px 40px;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &__logo {
+    &--link {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.29px;
+      color: $color-white;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 33px;
+    @include max-tablet {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      padding: 2.5rem 1rem;
+      display: none;
+      &::after {
+        position: absolute;
+        top: 0;
+        content: '';
+        width: 100vw;
+        height: 100vh;
+        border-radius: 100px;
+        scale: 0;
+        background-color: $color-white;
+        z-index: -1;
+        transition: scale 0.3s ease-in-out;
+      }
+      &--active {
+        &::after {
+          scale: 1;
+        }
+      }
+    }
+    &--always-visible {
+      display: flex !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    @include max-tablet {
+      display: flex;
+    }
+    &-bar {
+      width: 25px;
+      height: 3px;
+      background-color: $color-white;
+      transition: all 0.3s ease-in-out;
+    }
+    &--open {
+      .navbar__toggle-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .navbar__toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .navbar__toggle-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+  .active {
+    display: flex;
+  }
+  &__item {
+    color: $color-white;
+    cursor: pointer;
+    font-size: 16px;
+    &:hover {
+      color: $color-gray;
+    }
+  }
+  &__link {
+    color: $color-white;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $btn-primary;
+    }
+    @include max-tablet {
+      color: $deep-blue;
+    }
+  }
+}
