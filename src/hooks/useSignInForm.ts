@@ -1,9 +1,9 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signIn } from '../api/fakeApi';
 import { useAuth } from './useAuth';
 import { toast } from 'react-hot-toast';
-import { validateForm } from '../components/SignInForm/validation';
+import { validateForm } from '../components/SignInForm/SignInForm.validation';
 import { FormErrors } from '../components/SignInForm/SignInForm.types';
 
 export const useSignInForm = () => {
