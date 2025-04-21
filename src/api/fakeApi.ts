@@ -1,40 +1,23 @@
-interface SignInPayload {
-  email: string;
-  password: string;
-}
+import { SignInPayload } from './fakeApi.types';
+import { runValidations } from './fakieApi.validators';
 
-export const signIn = ({
+const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+export const signIn = async ({
   email,
   password,
 }: SignInPayload): Promise<{ message: string; token: string }> => {
-  return new Promise((resolve, reject) => {
-    const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+  await delay(1500);
 
-    (async () => {
-      await delay(1500);
+  runValidations({ email, password });
 
-      if (!email.includes('@')) {
-        return reject(new Error('Invalid email format.'));
-      }
+  if (email === 'delay@test.com') {
+    await delay(3000);
+  }
 
-      if (email.endsWith('@blocked.com')) {
-        return reject(new Error('This email domain is blocked.'));
-      }
+  if (email === 'error@test.com') {
+    throw new Error('Unexpected server error.');
+  }
 
-      if (email === 'delay@test.com') {
-        await delay(3000);
-      }
-
-      if (email === 'error@test.com') {
-        return reject(new Error('Unexpected server error.'));
-      }
-
-      return resolve({ message: 'Login successful', token: 'fake_token_123' });
-    })();
-  });
+  return { message: 'Login successful', token: 'fake_token_123' };
 };
-
-interface SignInPayload {
-  email: string;
-  password: string;
-}

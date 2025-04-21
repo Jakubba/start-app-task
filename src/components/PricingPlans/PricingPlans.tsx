@@ -1,57 +1,14 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { plans } from './../../data/pricingPlansData';
 import { Plan } from './PricingPlans.types';
+import {
+  planContainerVariants,
+  itemVariants,
+  innerItemVariants,
+  listVariants,
+} from './PricingPlans.motion';
 import './PricingPlans.styles.scss';
-
-const planContainerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.3,
-      ease: 'easeOut',
-      when: 'beforeChildren',
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const innerItemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const listVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.5,
-      staggerChildren: 1.5,
-      duration: 0.6,
-    },
-  },
-};
 
 const PricingPlans: React.FC = () => {
   return (

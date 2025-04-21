@@ -1,86 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { NavbarProps } from './Navbar.types';
+import { menuVariants, itemVariants, logoVariants, toggleVariants } from './Navbar.motion';
+import useWindowSize from '../../hooks/useWindowSize';
 import './Navbar.styles.scss';
 
-const menuVariants: Variants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    display: 'flex',
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.1,
-    },
-  },
-  closed: {
-    opacity: 0,
-    y: -20,
-    transitionEnd: {
-      display: 'none',
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  open: {
-    opacity: 1,
-    y: 0,
-  },
-  closed: {
-    opacity: 0,
-    y: -10,
-  },
-};
-
-const logoVariants: Variants = {
-  hidden: { opacity: 0, y: -10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.2,
-      duration: 0.4,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const toggleVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 0.4,
-      duration: 0.3,
-      ease: 'easeOut',
-    },
-  },
-};
-
-export const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 992);
+  const { width } = useWindowSize();
+  const isDesktop = width > 992;
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 992);
-      if (window.innerWidth > 992) {
-        setMenuOpen(true);
-      } else {
-        setMenuOpen(false);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    if (isDesktop) {
+      setMenuOpen(true);
+    } else {
+      setMenuOpen(false);
+    }
+  }, [isDesktop]);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
+
+  if (!Array.isArray(menuItems)) {
+    console.error('Menu items should be an array');
+    return null;
+  }
 
   return (
     <nav className="navbar">
@@ -117,21 +63,15 @@ export const Navbar = () => {
           animate={menuOpen ? 'open' : 'closed'}
           variants={menuVariants}
         >
-          {['Overview', 'Prices', 'Blog', 'Feedback'].map((label, i) => (
-            <motion.li
-              key={label}
-              className={`navbar__item ${label === 'Overview' ? 'disabled' : ''}`}
-              variants={itemVariants}
-            >
-              {label === 'Overview' ? (
-                label
-              ) : (
+          {menuItems.map((label) =>
+            label ? (
+              <motion.li key={label} variants={itemVariants}>
                 <Link to={`/${label.toLowerCase()}`} className="navbar__link">
                   {label}
                 </Link>
-              )}
-            </motion.li>
-          ))}
+              </motion.li>
+            ) : null
+          )}
           <motion.li variants={itemVariants}>
             <Link to="/purchase" className="btn btn-small btn-primary">
               <span>Purchase</span>
@@ -142,3 +82,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;

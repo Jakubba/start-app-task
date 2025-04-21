@@ -1,8 +1,7 @@
 # 🚀 Startup App – Hero + Pricing Table
 
 Aplikacja stworzona na podstawie designu z Figma:  
-<img src="./src/assets/images/header_14.png" height="400px" width="100%">
-<img src="./src/assets/images/pricing_table_5.png" height="400px" width="100%">
+<img src="./src/assets/images/all.png" height="100%" width="600px">
 
 🔗 **Live demo aplikacji:**  
 [👉 Otwórz aplikację online](https://vercel)
