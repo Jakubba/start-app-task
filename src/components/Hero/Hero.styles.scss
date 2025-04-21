@@ -1,7 +1,7 @@
 @use '../../styles/base/variables.scss' as *;
 @use '../../styles/base/mixin.scss' as *;
 .hero {
-  padding: 120px 16px 30px 16px;
+  padding: 7.5rem 1rem 1.875rem 1rem;
   background-color: $primary-color;
   display: flex;
   align-items: center;
@@ -9,11 +9,11 @@
   width: 100vw;
   min-height: 100vh;
   @include desktop {
-    padding: 195px 80px 60px 80px;
-    gap: 79px;
+    padding: 12.1875rem 5rem 3.75rem 5rem;
+    gap: 4.9375rem;
   }
   @include max-small {
-    padding: 120px 0px 30px 0px;
+    padding: 7.5rem 0rem 1.875rem 0rem;
   }
   &__content {
     display: flex;
@@ -21,7 +21,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 976px;
+    max-width: 61rem;
     @include desktop {
       gap: 60px;
       flex-direction: row;
@@ -33,25 +33,25 @@
     align-items: center;
     width: 100%;
     @include max-small {
-      padding-inline: 16px;
+      padding-inline: 1rem;
     }
     @include desktop {
-      max-width: 424px;
+      max-width: 26.5rem;
       align-items: start;
     }
     @include max-tablet {
-      margin-bottom: 60px;
+      margin-bottom: 3.75rem;
     }
   }
 
   &__title {
-    font-size: 58px;
-    line-height: 70px;
+    font-size: 3.625rem;
+    line-height: 4.375rem;
     font-weight: 700;
     letter-spacing: -1px;
     text-wrap: auto;
     color: $color-white;
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
     text-align: center;
     @include desktop {
       text-align: start;
@@ -59,15 +59,15 @@
   }
 
   &__description {
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 1.375rem;
+    line-height: 2rem;
     font-weight: 500;
     color: $color-white;
-    margin-bottom: 45px;
+    margin-bottom: 2.8125rem;
     text-align: center;
     @include desktop {
       text-align: start;
-      max-width: 363px;
+      max-width: 22.6875rem;
     }
   }
 }

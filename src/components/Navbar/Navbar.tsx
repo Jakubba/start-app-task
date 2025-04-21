@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
           animate="visible"
           variants={logoVariants}
         >
-          <Link to="/home" className="navbar__logo--link">
+          <Link to="/#" className="navbar__logo--link">
             Startup 3
           </Link>
         </motion.div>

@@ -39,7 +39,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 33px;
+    gap: 2.0625rem;
     @include max-tablet {
       position: absolute;
       top: 100%;
@@ -75,7 +75,7 @@
   &__toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.3125rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -108,7 +108,7 @@
   &__item {
     color: $color-white;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     &:hover {
       color: $color-gray;
     }

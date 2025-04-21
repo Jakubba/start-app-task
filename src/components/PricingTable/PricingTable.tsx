@@ -21,12 +21,26 @@ const PricingTable: React.FC<PricingTableProps> = ({ title, subtitle }) => {
       variants={formContainerVariants}
       initial="hidden"
       animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
     >
       <div className="pricing__header">
-        <motion.h2 className="pricing__title" variants={titleVariants}>
+        <motion.h2
+          className="pricing__title"
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           {displayTitle}
         </motion.h2>
-        <motion.p className="pricing__subtitle" variants={subtitleVariants}>
+        <motion.p
+          className="pricing__subtitle"
+          variants={subtitleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           {displaySubtitle}
         </motion.p>
       </div>

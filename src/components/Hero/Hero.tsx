@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ title, description, buttonText }) => {
           className="hero__intro"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.5 }}
           variants={heroIntroVariants}
         >
           <motion.h1 className="hero__title" variants={fadeInLeftVariants}>

@@ -36,6 +36,7 @@ export const useSignInForm = () => {
       toast.success(res.message);
       login();
       navigate('/pricing');
+      window.scrollTo(0, 0);
     } catch (err: any) {
       const errorMsg = err.message || 'Something went wrong.';
       setErrors({ email: errorMsg });
