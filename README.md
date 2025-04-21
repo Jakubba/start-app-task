@@ -4,7 +4,7 @@ Aplikacja stworzona na podstawie designu z Figma:
 <img src="./src/assets/images/all.png" height="100%" width="600px">
 
 🔗 **Live demo aplikacji:**  
-[👉 Otwórz aplikację online](https://vercel)
+[👉 Otwórz aplikację online](https://start-app-task-9q12.vercel.app/)
 
 ---
 
