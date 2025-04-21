@@ -15,17 +15,10 @@ const SignInForm: React.FC = () => {
       onSubmit={handleSubmit}
       variants={formContainerVariants}
       initial="hidden"
-      animate="visible"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
     >
-      <motion.h2
-        className="auth-form__form-title"
-        variants={formItemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-      >
+      <motion.h2 className="auth-form__form-title" variants={formItemVariants}>
         Sign In Now
       </motion.h2>
 
@@ -59,20 +52,11 @@ const SignInForm: React.FC = () => {
         type="submit"
         disabled={loading}
         variants={formItemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
       >
         {loading ? <div className="spinner" /> : <span>Sign In</span>}
       </motion.button>
 
-      <motion.div
-        className="auth-form__or"
-        variants={formItemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-      >
+      <motion.div className="auth-form__or" variants={formItemVariants}>
         <span className="auth-form__or--text">or</span>
       </motion.div>
 
@@ -84,13 +68,7 @@ const SignInForm: React.FC = () => {
         <span>Login via Twitter</span>
       </motion.button>
 
-      <motion.div
-        className="auth-form__footer"
-        variants={formItemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-      >
+      <motion.div className="auth-form__footer" variants={formItemVariants}>
         <p className="auth-form__footer-text">Do you have an Account?</p>
         <button className="auth-form__link link" type="button">
           Sign In
