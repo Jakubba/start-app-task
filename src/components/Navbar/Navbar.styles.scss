@@ -11,10 +11,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 30px 16px;
+  padding: 1.875rem 1rem;
   background-color: $primary-color;
   @include desktop {
-    padding: 65px 40px 30px 40px;
+    padding: 4.0625rem 2.5rem 1.875rem 2.5rem;
   }
   &__container {
     display: flex;
@@ -24,9 +24,9 @@
   }
   &__logo {
     &--link {
-      font-size: 24px;
-      font-weight: 700;
+      font-size: 1.5rem;
       line-height: 1;
+      font-weight: 700;
       letter-spacing: -0.29px;
       color: $color-white;
     }
@@ -116,8 +116,8 @@
   &__link {
     color: $color-white;
     text-decoration: none;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
     &:hover {

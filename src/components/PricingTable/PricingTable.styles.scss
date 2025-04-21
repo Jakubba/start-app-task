@@ -5,8 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px;
-
+  padding: 80px 16px;
+  @include desktop {
+    padding: 80px;
+  }
   &__title {
     color: $deep-blue;
     font-size: 2.625rem;

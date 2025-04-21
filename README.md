@@ -1,7 +1,8 @@
 # 🚀 Startup App – Hero + Pricing Table
 
-Aplikacja stworzona na podstawie designu z Figma:  
-<img src="./src/assets/images/all.png" height="100%" width="600px">
+Aplikacja stworzona na podstawie designu z Figma:
+
+<img src="./src/assets/images/all.png" height="100%" width="890px">
 
 🔗 **Live demo aplikacji:**  
 [👉 Otwórz aplikację online](https://start-app-task-9q12.vercel.app/)
@@ -77,29 +78,33 @@ To wszystko! Aplikacja powinna działać lokalnie na Twoim komputerze.
 - **Framer Motion** – animacje komponentów
 - **React Context API** – zarządzanie stanem logowania
 - **React Toastify** – powiadomienia toast
-- **Axios** – do symulacji żądań (fake API)
 - **Prettier** – automatyczne formatowanie kodu
 
 ---
 
 ## 💡 Kluczowe funkcjonalności
 
+Pewnie! Oto poprawiona i doprecyzowana wersja komentarza:
+
+---
+
 ### 🔹 Hero Section (`header_14`)
 
 - ✅ Pełna responsywność (mobile / tablet / desktop)
 - ✅ Animowane wejścia komponentów (`framer-motion`)
 - ✅ Formularz rejestracji z walidacją:
-  - poprawna składnia emaila,
+  - poprawna składnia adresu e-mail,
   - hasło: minimum 6 znaków,
-  - zgoda na regulamin (checkbox).
+  - wymagane zaznaczenie zgody na regulamin (checkbox).
 - ✅ Przycisk `Sign In`:
-  - symuluje zapytanie do API (`axios` + `setTimeout`),
-  - obsługuje różne scenariusze:
-    - ⏳ opóźnienie,
-    - ✅ sukces (ustawienie `loggedIn = true`),
-    - ❌ błędy (np. zablokowana domena email),
-  - blokada wielokrotnego klikania,
-  - powiadomienia toast (`react-toastify`).
+  - symuluje logowanie (bez użycia `axios`, tylko lokalna logika),
+  - działa przy poprawnej walidacji: prawidłowy e-mail i hasło (min. 6 znaków),
+  - po zalogowaniu ustawia `loggedIn = true`,
+  - blokuje wielokrotne klikanie w trakcie "logowania",
+  - scenariusze błędów (np. niepoprawny email lub zbyt krótkie hasło),
+  - powiadomienia (`react-toastify`) informują o sukcesie lub błędach.
+
+---
 
 ### 🔹 Pricing Table (`pricing_table_5`)
 
@@ -141,17 +146,53 @@ interface AuthContextType {
 ```
 src/
 ├── components/
+│   ├── CheckboxFiled/
+│   │   ├── CheckboxFiled.motion.ts
+│   │   ├── CheckboxFiled.styles.scss
+│   │   ├── CheckboxFiled.tsx
+│   │   └── CheckboxFiled.types.ts
+│   ├── Hero/
+│   │   ├── Hero.motion.ts
+│   │   ├── Hero.styles.scss
+│   │   ├── Hero.tsx
+│   │   └── Hero.types.ts
+│   ├── InputField/
+│   │   ├── InputField.motion.ts
+│   │   ├── InputField.styles.scss
+│   │   ├── InputField.tsx
+│   │   └── InputField.types.ts
 │   ├── Navbar/
+│   │   ├── Navbar.motion.ts
+│   │   ├── Navbar.styles.scss
+│   │   ├── Navbar.tsx
+│   │   └── Navbar.types.ts
 │   ├── PricingPlans/
+│   │   ├── PricingPlans.motion.ts
+│   │   ├── PricingPlans.styles.scss
+│   │   ├── PricingPlans.tsx
+│   │   └── PricingPlans.types.ts
+│   ├── PricingTable/
+│   │   ├── PricingTable.motion.ts
+│   │   ├── PricingTable.styles.scss
+│   │   ├── PricingTable.tsx
+│   │   └── PricingTable.types.ts
 │   └── SignInForm/
+│   │   ├── SignInForm.motion.ts
+│   │   ├── SignInForm.styles.scss
+│   │   ├── SignInForm.tsx
+│   │   ├── SignInForm.types.ts
+│   │   └── SignInForm.validation.ts
 ├── context/
-│   └── AuthContext.tsx
+│   ├── AuthContext.tsx
+│   └── AuthContext.types.ts
 ├── data/
 │   └── pricingPlansData.ts
 ├── hooks/
-│   └── useAuth.ts
-├── styles/
-│   └── global.scss
+│   ├── useAuth.ts
+│   ├─  useSignInForm.ts
+│   └── useWindowsSize.ts
+├── routes/
+│   └── ProtectedRoutes.tsx
 ├── pages/
 │   ├── Hero.tsx
 │   └── PricingTable.tsx
@@ -160,9 +201,13 @@ src/
 ├── styles/
 │   ├── base/
 │   │   ├── font.scss
+│   │   ├── global.scss
 │   │   ├── mixin.scss
 │   │   ├── reset.scss
 │   │   └── variables.scss
+│   ├── ui/
+│   │   ├── button.scss
+│   │   └── spinner.scss
 │   └── main.scss
 │
 ├── App.tsx

@@ -5,35 +5,44 @@ export const plans: Plan[] = [
     price: 19,
     description:
       'All the features you need to keep your personal files safe, accessible, and easy to share.',
+    user: 'per user',
+    time: 'per month',
     features: [
       { text: '2GB of hosting space', active: true },
       { text: '14 days of free backups', active: true },
       { text: 'Social integrations', active: false },
       { text: 'Advanced client billing', active: false },
     ],
+    btnText: 'Start Free Trial',
   },
   {
     title: 'Enterprise',
     price: 49,
     description:
       'All the features you need to keep your personal files safe, accessible, and easy to share.',
+    user: 'per user',
+    time: 'per month',
     features: [
       { text: '2GB of hosting space', active: true },
       { text: '14 days of free backups', active: true },
       { text: 'Social integrations', active: true },
       { text: 'Advanced client billing', active: false },
     ],
+    btnText: 'Start Free Trial',
   },
   {
     title: 'Enterprise',
     price: 99,
     description:
       'All the features you need to keep your personal files safe, accessible, and easy to share.',
+    user: 'per user',
+    time: 'per month',
     features: [
       { text: '2GB of hosting space', active: true },
       { text: '14 days of free backups', active: true },
       { text: 'Social integrations', active: true },
       { text: 'Advanced client billing', active: true },
     ],
+    btnText: 'Start Free Trial',
   },
 ];

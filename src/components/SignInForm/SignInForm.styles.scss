@@ -3,34 +3,34 @@
 .auth-form {
   &__form {
     background-color: $color-white;
-    padding: 24px;
+    padding: 2rem 1.5rem;
     border-radius: 10px;
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 470px;
+    max-width: 29.375rem;
     flex-direction: column;
     @include desktop {
-      padding: 48px 70px 43px 70px;
+      padding: 3rem 4.375rem 2.6875rem 4.375rem;
     }
     &-title {
-      font-size: 42px;
+      font-size: 2.625rem;
       font-weight: 700;
-      line-height: 52px;
+      line-height: 3.25rem;
       letter-spacing: -0.4px;
       color: $color-black;
-      margin-bottom: 34px;
+      margin-bottom: 2.125rem;
     }
   }
 
   &__input {
-    padding: 12px 24px;
+    padding: 0.75rem 1.5rem;
     border-radius: $border-radius-lg;
     border: 1px solid $color-light-gray;
     color: $border-color;
-    margin-bottom: 20px;
-    font-size: 18px;
-    line-height: 26px;
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
     font-weight: 500;
     width: 100%;
     max-width: 320px;
@@ -39,7 +39,7 @@
       border-color: $light-blue;
     }
     &:nth-child(3) {
-      margin-bottom: 30px;
+      margin-bottom: 1.875rem;
     }
   }
 
@@ -47,79 +47,6 @@
     font-size: 1rem;
     color: $color-gray;
   }
-  // &__field {
-  //   position: relative;
-  //   &--checkbox {
-  //     width: 100%;
-  //     max-width: 320px;
-  //     margin-bottom: 27.6px;
-  //     .auth-form__checkbox {
-  //       display: none;
-  //       transition: all 0.3s ease-in-out;
-  //       &:checked + .auth-form__label {
-  //         &::before {
-  //           background-color: $checked-bg-color;
-  //           border-color: $checked-bg-color;
-  //         }
-  //         &::after {
-  //           content: '';
-  //           width: 12px;
-  //           height: 9px;
-  //           background: url('./../../assets/icons/icon-check-black.svg') no-repeat;
-  //           background-size: contain;
-  //         }
-  //       }
-  //     }
-
-  //     .auth-form__label {
-  //       position: relative;
-  //       padding-left: 37px;
-  //       cursor: pointer;
-  //       font-size: 16px;
-  //       line-height: 26px;
-  //       color: $color-gray;
-  //       transition: all 0.3s ease-in-out;
-  //       &::before {
-  //         content: '';
-  //         position: absolute;
-  //         left: 0;
-  //         top: -2px;
-  //         width: $checkbox-size;
-  //         height: $checkbox-size;
-  //         border: 2px solid $border-color;
-  //         border-radius: $border-radius-md;
-  //         background-color: transparent;
-  //         transition:
-  //           background-color 0.3s,
-  //           border-color 0.3s;
-  //       }
-
-  //       &::after {
-  //         position: absolute;
-  //         display: block;
-  //         left: 6.7px;
-  //         top: 5.5px;
-  //         transition: content 0.3s;
-  //       }
-  //     }
-  //     .auth-form__error {
-  //       position: absolute;
-  //       bottom: -18px;
-  //     }
-  //   }
-  //   &--error {
-  //     .auth-form__input,
-  //     .auth-form__checkbox {
-  //       border-color: $error;
-  //     }
-  //     .auth-form__label {
-  //       color: $error;
-  //       &::before {
-  //         border-color: $error;
-  //       }
-  //     }
-  //   }
-  // }
   &__error {
     color: $error;
     font-size: 0.625rem;
@@ -137,13 +64,13 @@
     position: relative;
     width: 100%;
     z-index: 10;
-    max-width: 320px;
+    max-width: 20rem;
     &--text {
       position: relative;
-      font-size: 16px;
-      line-height: 26px;
+      font-size: 1rem;
+      line-height: 1.625rem;
       color: $color-gray;
-      padding: 27.6px 13px 16.6px 13px;
+      padding: 1.725rem 0.8125rem 1.0375rem 0.8125rem;
       background-color: $color-white;
       width: max-content;
       z-index: 20;
@@ -167,12 +94,12 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-top: 30px;
+    margin-top: 1.875rem;
   }
 
   &__footer-text {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
     font-weight: 500;
     color: $color-gray;
   }

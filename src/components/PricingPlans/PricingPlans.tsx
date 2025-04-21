@@ -26,10 +26,10 @@ const PricingPlans: React.FC = () => {
               </motion.span>
               <motion.div className="plan__details" variants={innerItemVariants}>
                 <motion.span className="plan__trial" variants={innerItemVariants}>
-                  per user
+                  {plan.user}
                 </motion.span>
                 <motion.span className="plan__cancel" variants={innerItemVariants}>
-                  per month
+                  {plan.time}
                 </motion.span>
               </motion.div>
             </motion.div>
@@ -51,7 +51,7 @@ const PricingPlans: React.FC = () => {
           </motion.ul>
 
           <motion.button className="plan__btn" variants={innerItemVariants}>
-            Start Free Trial
+            {plan.btnText}
           </motion.button>
         </motion.li>
       ))}
